@@ -7,8 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "google/protobuf/Greet.pbrpc.h"
+#import <GRPCClient/GRPCCall.h>
+#import <ProtoRPC/ProtoRPC.h>
+#import <GRPCCLient/GRPCTransport.h>
+
+static NSString * const kHostAddress = @"localhost:50051";
 
 @interface ViewController ()
+
+@end
+
+@interface TestResponseHandler : NSObject<GRPCProtoResponseHandler>
+
+@end
+
+@implementation TestResponseHandler
+
+- (dispatch_queue_t)dispatchQueue {
+    return dispatch_get_main_queue();
+}
+
+- (void)didReceiveProtoMessage:(GPBMessage *)message {
+    NSLog(@"%@", message);
+}
 
 @end
 
@@ -16,7 +38,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    GreetingService *client = [[GreetingService alloc] initWithHost:kHostAddress];
+    
+    GRPCMutableCallOptions *options = [[GRPCMutableCallOptions alloc] init];
+    options.transport = GRPCDefaultTransportImplList.core_insecure;
+    
+    Greeting *greeting = [Greeting message];
+    greeting.firstName = @"Yulin";
+    greeting.lastName = @"Liang";
+    GreetRequest *request = [GreetRequest message];
+    request.greeting = greeting;
+    
+    GRPCUnaryProtoCall *call = [client greetWithMessage:request
+                                        responseHandler:[[TestResponseHandler alloc] init]
+                                            callOptions:options];
+    [call start];
 }
 
 
