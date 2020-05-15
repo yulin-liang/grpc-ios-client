@@ -7,7 +7,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "YLRootViewController.h"
 
 @interface SceneDelegate ()
 
@@ -22,9 +22,10 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.windowScene = (UIWindowScene *)scene;
-    ViewController *rootViewController = [[ViewController alloc] init];
+    YLRootViewController *rootViewController = [[YLRootViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     self.window.rootViewController = navController;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 }
 

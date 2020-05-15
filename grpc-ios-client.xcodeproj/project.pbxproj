@@ -13,6 +13,10 @@
 		6258D98B2469B0A500F03DF0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6258D98A2469B0A500F03DF0 /* ViewController.m */; };
 		6258D9902469B0A900F03DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6258D98F2469B0A900F03DF0 /* Assets.xcassets */; };
 		6258D9962469B0A900F03DF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6258D9952469B0A900F03DF0 /* main.m */; };
+		6278DAA4246F4DEC008A6024 /* YLUnaryCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAA3246F4DEC008A6024 /* YLUnaryCallViewController.m */; };
+		6278DAA7246F50CA008A6024 /* YLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAA6246F50CA008A6024 /* YLRootViewController.m */; };
+		6278DAAC246F570F008A6024 /* YTGreetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAAB246F570F008A6024 /* YTGreetService.m */; };
+		6278DAAF246F5B20008A6024 /* YLClientStreamingCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAAE246F5B20008A6024 /* YLClientStreamingCallViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		6258D98F2469B0A900F03DF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6258D9942469B0A900F03DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6258D9952469B0A900F03DF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6278DAA2246F4D76008A6024 /* YLUnaryCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLUnaryCallViewController.h; sourceTree = "<group>"; };
+		6278DAA3246F4DEC008A6024 /* YLUnaryCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLUnaryCallViewController.m; sourceTree = "<group>"; };
+		6278DAA5246F5099008A6024 /* YLRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLRootViewController.h; sourceTree = "<group>"; };
+		6278DAA6246F50CA008A6024 /* YLRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLRootViewController.m; sourceTree = "<group>"; };
+		6278DAAA246F5632008A6024 /* YLGreetService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGreetService.h; sourceTree = "<group>"; };
+		6278DAAB246F570F008A6024 /* YTGreetService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTGreetService.m; sourceTree = "<group>"; };
+		6278DAAD246F5AD8008A6024 /* YLClientStreamingCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClientStreamingCallViewController.h; sourceTree = "<group>"; };
+		6278DAAE246F5B20008A6024 /* YLClientStreamingCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClientStreamingCallViewController.m; sourceTree = "<group>"; };
 		99F2EA7635FB1A96DF470EF2 /* Pods-grpc-ios-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-ios-client.debug.xcconfig"; path = "Target Support Files/Pods-grpc-ios-client/Pods-grpc-ios-client.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F9BC5444A05E5B2FA7A5C5 /* Pods_grpc_ios_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grpc_ios_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDAA0639C17ACA919ADD50AE /* Pods-grpc-ios-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-ios-client.release.xcconfig"; path = "Target Support Files/Pods-grpc-ios-client/Pods-grpc-ios-client.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +93,8 @@
 		6258D9822469B0A500F03DF0 /* grpc-ios-client */ = {
 			isa = PBXGroup;
 			children = (
+				6278DAA9246F55BF008A6024 /* ApiManagers */,
+				6278DAA8246F5591008A6024 /* ViewControllers */,
 				6258D9832469B0A500F03DF0 /* AppDelegate.h */,
 				6258D9842469B0A500F03DF0 /* AppDelegate.m */,
 				6258D9862469B0A500F03DF0 /* SceneDelegate.h */,
@@ -92,6 +106,28 @@
 				6258D9952469B0A900F03DF0 /* main.m */,
 			);
 			path = "grpc-ios-client";
+			sourceTree = "<group>";
+		};
+		6278DAA8246F5591008A6024 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6278DAA2246F4D76008A6024 /* YLUnaryCallViewController.h */,
+				6278DAA3246F4DEC008A6024 /* YLUnaryCallViewController.m */,
+				6278DAA5246F5099008A6024 /* YLRootViewController.h */,
+				6278DAA6246F50CA008A6024 /* YLRootViewController.m */,
+				6278DAAD246F5AD8008A6024 /* YLClientStreamingCallViewController.h */,
+				6278DAAE246F5B20008A6024 /* YLClientStreamingCallViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6278DAA9246F55BF008A6024 /* ApiManagers */ = {
+			isa = PBXGroup;
+			children = (
+				6278DAAA246F5632008A6024 /* YLGreetService.h */,
+				6278DAAB246F570F008A6024 /* YTGreetService.m */,
+			);
+			path = ApiManagers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1140;
-				ORGANIZATIONNAME = "梁煜麟";
+				ORGANIZATIONNAME = "Yulin Liang";
 				TargetAttributes = {
 					6258D97F2469B0A500F03DF0 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -206,7 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6278DAA4246F4DEC008A6024 /* YLUnaryCallViewController.m in Sources */,
+				6278DAAF246F5B20008A6024 /* YLClientStreamingCallViewController.m in Sources */,
+				6278DAA7246F50CA008A6024 /* YLRootViewController.m in Sources */,
 				6258D98B2469B0A500F03DF0 /* ViewController.m in Sources */,
+				6278DAAC246F570F008A6024 /* YTGreetService.m in Sources */,
 				6258D9852469B0A500F03DF0 /* AppDelegate.m in Sources */,
 				6258D9962469B0A900F03DF0 /* main.m in Sources */,
 				6258D9882469B0A500F03DF0 /* SceneDelegate.m in Sources */,
