@@ -36,6 +36,13 @@ static NSString * const kHostAddress = @"localhost:50051";
 
 @implementation ViewController
 
+- (instancetype)init {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
