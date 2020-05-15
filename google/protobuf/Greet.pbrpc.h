@@ -11,6 +11,7 @@
 
 @class GreetRequest;
 @class GreetResponse;
+@class Greeting;
 
 #if !defined(GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO) || !GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
 #endif
@@ -30,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (GRPCUnaryProtoCall *)greetWithMessage:(GreetRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
+#pragma mark GreetClientStream(stream Greeting) returns (GreetResponse)
+
+- (GRPCStreamingProtoCall *)greetClientStreamWithResponseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
 @end
 
 /**
@@ -43,6 +48,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)greetWithRequest:(GreetRequest *)request handler:(void(^)(GreetResponse *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToGreetWithRequest:(GreetRequest *)request handler:(void(^)(GreetResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GreetClientStream(stream Greeting) returns (GreetResponse)
+
+- (void)greetClientStreamWithRequestsWriter:(GRXWriter *)requestWriter handler:(void(^)(GreetResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGreetClientStreamWithRequestsWriter:(GRXWriter *)requestWriter handler:(void(^)(GreetResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end

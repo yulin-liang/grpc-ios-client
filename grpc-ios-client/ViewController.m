@@ -54,6 +54,17 @@ static NSString * const kHostAddress = @"localhost:50051";
                                         responseHandler:[[TestResponseHandler alloc] init]
                                             callOptions:options];
     [call start];
+    
+    
+    GRPCStreamingProtoCall *clientStreamingCall = [client greetClientStreamWithResponseHandler:[[TestResponseHandler alloc] init] callOptions:options];
+    [clientStreamingCall start];
+    for (int i = 0; i < 10; i++) {
+        Greeting *greetRequest = [Greeting message];
+        greetRequest.firstName = [NSString stringWithFormat:@"%d", i];
+        greetRequest.lastName = @"Liang";
+        [clientStreamingCall writeMessage:greetRequest];
+    }
+    [clientStreamingCall finish];
 }
 
 

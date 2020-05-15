@@ -72,5 +72,24 @@
              responseClass:[GreetResponse class]];
 }
 
+#pragma mark GreetClientStream(stream Greeting) returns (GreetResponse)
+
+- (void)greetClientStreamWithRequestsWriter:(GRXWriter *)requestWriter handler:(void(^)(GreetResponse *_Nullable response, NSError *_Nullable error))handler{
+  [[self RPCToGreetClientStreamWithRequestsWriter:requestWriter handler:handler] start];
+}
+// Returns a not-yet-started RPC object.
+- (GRPCProtoCall *)RPCToGreetClientStreamWithRequestsWriter:(GRXWriter *)requestWriter handler:(void(^)(GreetResponse *_Nullable response, NSError *_Nullable error))handler{
+  return [self RPCToMethod:@"GreetClientStream"
+            requestsWriter:requestWriter
+             responseClass:[GreetResponse class]
+        responsesWriteable:[GRXWriteable writeableWithSingleHandler:handler]];
+}
+- (GRPCStreamingProtoCall *)greetClientStreamWithResponseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions {
+  return [self RPCToMethod:@"GreetClientStream"
+           responseHandler:handler
+               callOptions:callOptions
+             responseClass:[GreetResponse class]];
+}
+
 @end
 #endif
