@@ -9,6 +9,7 @@
 #import "YLRootViewController.h"
 #import "YLUnaryCallViewController.h"
 #import "YLClientStreamingCallViewController.h"
+#import "YLCallsWithURLSessionViewController.h"
 
 const NSString * kCellIdentifier = @"kCellIdentifier";
 
@@ -23,7 +24,7 @@ const NSString * kCellIdentifier = @"kCellIdentifier";
 
 - (instancetype)init {
     if (self = [super init]) {
-        _dataSource = [NSArray arrayWithObjects:@"Unary Call", @"Client Streaming Call", @"Server Streaming Call", @"Bidirectional Streaming Call", nil];
+        _dataSource = [NSArray arrayWithObjects:@"Unary Call", @"Client Streaming Call", @"Calls with NSURLSession", nil];
     }
     return self;
 }
@@ -68,6 +69,10 @@ const NSString * kCellIdentifier = @"kCellIdentifier";
             YLClientStreamingCallViewController *clientStreamingVC = [[YLClientStreamingCallViewController alloc] init];
             [self.navigationController pushViewController:clientStreamingVC animated:YES];
             break;
+        }
+        case 2: {
+            YLCallsWithURLSessionViewController *callVC = [[YLCallsWithURLSessionViewController alloc] init];
+            [self.navigationController pushViewController:callVC animated:YES];
         }
         default:
             break;

@@ -12,7 +12,7 @@
 #import <GRPCCLient/GRPCTransport.h>
 #import "YLGreetService.h"
 
-@interface YLUnaryCallViewController()<GRPCProtoResponseHandler>
+@interface YLUnaryCallViewController()<GRPCProtoResponseHandler, NSURLSessionDelegate>
 
 @end
 
@@ -98,13 +98,13 @@
 - (void)startCall {
     GRPCMutableCallOptions *options = [[GRPCMutableCallOptions alloc] init];
     options.transport = GRPCDefaultTransportImplList.core_insecure;
-    
+
     Greeting *greeting = [Greeting message];
     greeting.firstName = _firstNameTextInput.text;
     greeting.lastName = _lastNameTextInput.text;
     GreetRequest *request = [GreetRequest message];
     request.greeting = greeting;
-    
+
     GRPCUnaryProtoCall *call = [[[YLGreetService sharedInstance] getClientStub] greetWithMessage:request responseHandler:self callOptions:options];
     [call start];
 }

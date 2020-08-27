@@ -7,6 +7,7 @@
 //
 
 #import "google/protobuf/Greet.pbrpc.h"
+#import "google/protobuf/Test.pbrpc.h"
 
 @interface YLGreetService : NSObject
 

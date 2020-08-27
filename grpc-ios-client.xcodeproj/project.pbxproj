@@ -17,6 +17,7 @@
 		6278DAA7246F50CA008A6024 /* YLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAA6246F50CA008A6024 /* YLRootViewController.m */; };
 		6278DAAC246F570F008A6024 /* YTGreetService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAAB246F570F008A6024 /* YTGreetService.m */; };
 		6278DAAF246F5B20008A6024 /* YLClientStreamingCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6278DAAE246F5B20008A6024 /* YLClientStreamingCallViewController.m */; };
+		62B442B224F8606100B7FA61 /* YLCallsWithURLSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B442B124F8606100B7FA61 /* YLCallsWithURLSessionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		6278DAAB246F570F008A6024 /* YTGreetService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTGreetService.m; sourceTree = "<group>"; };
 		6278DAAD246F5AD8008A6024 /* YLClientStreamingCallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLClientStreamingCallViewController.h; sourceTree = "<group>"; };
 		6278DAAE246F5B20008A6024 /* YLClientStreamingCallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLClientStreamingCallViewController.m; sourceTree = "<group>"; };
+		62B442B024F8604900B7FA61 /* YLCallsWithURLSessionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLCallsWithURLSessionViewController.h; sourceTree = "<group>"; };
+		62B442B124F8606100B7FA61 /* YLCallsWithURLSessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLCallsWithURLSessionViewController.m; sourceTree = "<group>"; };
 		99F2EA7635FB1A96DF470EF2 /* Pods-grpc-ios-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-ios-client.debug.xcconfig"; path = "Target Support Files/Pods-grpc-ios-client/Pods-grpc-ios-client.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F9BC5444A05E5B2FA7A5C5 /* Pods_grpc_ios_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_grpc_ios_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDAA0639C17ACA919ADD50AE /* Pods-grpc-ios-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grpc-ios-client.release.xcconfig"; path = "Target Support Files/Pods-grpc-ios-client/Pods-grpc-ios-client.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				6278DAA6246F50CA008A6024 /* YLRootViewController.m */,
 				6278DAAD246F5AD8008A6024 /* YLClientStreamingCallViewController.h */,
 				6278DAAE246F5B20008A6024 /* YLClientStreamingCallViewController.m */,
+				62B442B024F8604900B7FA61 /* YLCallsWithURLSessionViewController.h */,
+				62B442B124F8606100B7FA61 /* YLCallsWithURLSessionViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				6258D9852469B0A500F03DF0 /* AppDelegate.m in Sources */,
 				6258D9962469B0A900F03DF0 /* main.m in Sources */,
 				6258D9882469B0A500F03DF0 /* SceneDelegate.m in Sources */,
+				62B442B224F8606100B7FA61 /* YLCallsWithURLSessionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
